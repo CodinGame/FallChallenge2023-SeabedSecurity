@@ -1,0 +1,35 @@
+STATEMENT
+Score points by scanning valuable fish faster than your opponent.
+
+read creatureCount:int
+loop creatureCount read creatureId:int color:int type:int
+
+gameloop
+
+read myScore:int
+read foeScore:int
+
+read myScanCount:int
+loop myScanCount read creatureId:int
+read foeScanCount:int
+loop foeScanCount read creatureId:int
+
+read myDroneCount:int
+loop myDroneCount read droneId:int droneX:int droneY:int emergency:int battery:int
+
+read foeDroneCount:int
+loop foeDroneCount read droneId:int droneX:int droneY:int emergency:int battery:int
+
+read droneScanCount:int
+loop droneScanCount read droneId:int creatureId:int
+
+read visibleCreatureCount:int
+loop visibleCreatureCount read creatureId:int creatureX:int creatureY:int creatureVx:int creatureVy:int
+
+read radarBlipCount:int
+loop radarBlipCount read droneId:int creatureId:int radar:word(2)
+
+loop myDroneCount write WAIT 1
+
+OUTPUT
+MOVE <x> <y> <light (1|0)> | WAIT <light (1|0)>
