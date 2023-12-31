@@ -60,7 +60,7 @@ while True:
     for _ in range(my_drone_count):
         drone_id, drone_x, drone_y, dead, battery = map(int, input().split())
         pos = Vector(drone_x, drone_y)
-        drone = Drone(drone_id, pos, dead == '1', battery, [])
+        drone = Drone(drone_id, pos, dead == 1, battery, [])
         drone_by_id[drone_id] = drone
         my_drones.append(drone)
         my_radar_blips[drone_id] = []
@@ -69,7 +69,7 @@ while True:
     for _ in range(foe_drone_count):
         drone_id, drone_x, drone_y, dead, battery = map(int, input().split())
         pos = Vector(drone_x, drone_y)
-        drone = Drone(drone_id, pos, dead == '1', battery, [])
+        drone = Drone(drone_id, pos, dead == 1, battery, [])
         drone_by_id[drone_id] = drone
         foe_drones.append(drone)
     
